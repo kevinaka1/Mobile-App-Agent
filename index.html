@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f7f4" />
+  <title>Mobile App Agent — Market research, made tangible</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#home" aria-label="Mobile App Agent home" id="brandHome">
+        <span class="brand-mark"><span></span><span></span><span></span><span></span></span>
+        <span>fieldnotes<span class="brand-dot">.</span></span>
+      </a>
+      <div class="workspace-label">WORKSPACE</div>
+      <button class="nav-item active" id="sideHome"><span class="nav-icon">⌂</span><span>Home</span></button>
+      <button class="nav-item" id="sideStageOne"><span class="nav-icon">⌕</span><span>Explore market</span><span class="nav-count">01</span></button>
+      <button class="nav-item muted" title="Coming in a future stage"><span class="nav-icon">◈</span><span>Feature checks</span><span class="soon">SOON</span></button>
+      <div class="side-rule"></div>
+      <div class="workspace-label">YOUR WORK</div>
+      <div id="history" class="history-list"><div class="empty-history">Your research will show up here.</div></div>
+      <div class="sidebar-bottom">
+        <div class="avatar" id="currentUserInitials">AM</div><div class="profile"><strong id="currentUserName">Alex Morgan</strong><span>Demo account</span></div><button class="more-btn" aria-label="More options">···</button>
+      </div>
+    </aside>
+
+    <main id="top" class="main-content">
+      <header class="topbar"><div class="breadcrumb">Workspace <span>/</span> <strong id="pageName">Home</strong></div><div class="topbar-right"><label class="demo-user-control"><span>DEMO USER</span><select id="demoUserSelect" aria-label="Switch demo user"></select></label><button class="help-btn" aria-label="About this demo" title="This MVP uses illustrative data">?</button></div></header>
+      <section class="home-view" id="homeView">
+        <div class="home-eyebrow"><span class="eyebrow-line"></span> A CLEARER VIEW OF YOUR COMPETITION</div>
+        <div class="home-hero">
+          <div class="home-copy"><h1>Build with a better<br/><em>read on the market.</em></h1><p>Mobile App Agent helps aspiring founders understand the apps already serving their idea. Explore competitors, learn what their users love and dislike, and find opportunities worth building for.</p><button class="home-cta" id="startStageOne">Start with your idea <span>↗</span></button><div class="home-footnote"><span>✳</span> Start with a description. Get a useful first look at the market.</div></div>
+          <div class="home-visual" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit-center"><span class="brand-mark"><span></span><span></span><span></span><span></span></span></div><div class="orbit-node node-one">✳</div><div class="orbit-node node-two">⌕</div><div class="orbit-node node-three">◈</div><div class="orbit-caption">IDEA → INSIGHT → EVIDENCE</div></div>
+        </div>
+        <div class="stage-navigation" aria-label="Research stages">
+          <button class="stage-nav-item current" id="stageNav1" type="button"><span class="stage-nav-number">01</span><span class="stage-nav-copy"><strong>Explore the market</strong><small>Find similar apps and review patterns</small></span><span class="stage-nav-state">AVAILABLE <b>↗</b></span></button>
+          <button class="stage-nav-item upcoming" data-coming-soon type="button"><span class="stage-nav-number">02</span><span class="stage-nav-copy"><strong>Check features</strong><small>Compare your feature ideas</small></span><span class="stage-nav-state">COMING SOON</span></button>
+          <button class="stage-nav-item upcoming" data-coming-soon type="button"><span class="stage-nav-number">03</span><span class="stage-nav-copy"><strong>Verify in the app</strong><small>See a phone agent explore screens</small></span><span class="stage-nav-state">COMING SOON</span></button>
+        </div>
+        <div class="home-lower"><span>YOUR IDEA, BETTER INFORMED</span><span>One research journey, three stages <b>✳</b></span></div>
+      </section>
+      <div class="stage-one-view" id="stageOneView" hidden>
+      <button class="back-home" id="backHome">← All stages</button>
+      <section class="intro" id="intro">
+        <div class="eyebrow"><span class="eyebrow-line"></span> COMPETITIVE RESEARCH, WITHOUT THE SPREADSHEET</div>
+        <h1>Find the gaps<br/>in your <em>next big idea.</em></h1>
+        <p class="intro-copy">Describe the app you want to build. We’ll map the landscape and surface what people love, and what they wish worked better.</p>
+        <div class="stepper"><div class="step active"><span class="step-num">01</span><span>Describe your idea</span></div><span class="step-line"></span><div class="step future"><span class="step-num">02</span><span>Check features</span></div><span class="step-line"></span><div class="step future"><span class="step-num">03</span><span>See it in action</span></div></div>
+      </section>
+
+      <section class="idea-card" aria-label="Describe your app idea">
+        <div class="card-label"><span class="spark">✳</span> YOUR APP IDEA <span class="optional">Be specific — the details help us find better matches.</span></div>
+        <label class="sr-only" for="idea">Describe the app you want to build</label>
+        <textarea id="idea" rows="3" placeholder="An app that helps people plan meals around what’s already in their fridge, with recipes that adapt to dietary needs…">An app that helps people plan meals around what’s already in their fridge, with recipes that adapt to dietary needs.</textarea>
+        <div class="form-footer"><span class="char-count"><span id="charCount">145</span> / 500</span><div class="form-actions"><button class="sample-btn" id="sampleBtn">↻ Try another idea</button><button class="analyze-btn" id="analyzeBtn"><span>Analyze the market</span><span class="arrow">↗</span></button></div></div>
+      </section>
+
+      <div class="trust-note"><span class="lock">⌑</span> Your idea stays private. This demo uses sample data to show how research works.</div>
+
+      <section class="results" id="results" aria-live="polite" hidden>
+        <div class="results-head"><div><div class="section-kicker"><span class="live-pulse"></span> MARKET SNAPSHOT <span class="demo-pill">ILLUSTRATIVE DATA</span><span class="analysis-status" id="analysisStatus">COMPLETED</span></div><h2>Here’s what the market is telling you.</h2><p class="results-sub">A first look at the apps closest to your idea and the patterns in their reviews.</p></div><button class="export-btn" id="exportBtn">↓ <span>Export summary</span></button></div>
+        <div class="summary-strip"><div class="summary-item"><span class="summary-icon green">⌕</span><div><strong id="matchCount">10</strong><span>similar apps</span></div></div><div class="summary-divider"></div><div class="summary-item"><span class="summary-icon violet">▤</span><div><strong id="reviewCount">8.4k</strong><span>reviews scanned</span></div></div><div class="summary-divider"></div><div class="summary-item"><span class="summary-icon amber">◎</span><div><strong id="sentimentCount">3</strong><span>sentiment groups</span></div></div><div class="summary-note"><span>✳</span> Most promising gap <strong>Personalized meal planning</strong></div></div>
+        <div class="analysis-grid">
+          <section class="panel competitors-panel"><div class="panel-heading"><div><span class="panel-index">01</span><h3>Similar apps</h3></div><span class="panel-meta">TOP 10 MATCHES <span class="info">i</span></span></div><div class="competitor-list" id="competitorList"></div><button class="view-all" id="viewAll">View all 10 competitors <span>→</span></button></section>
+          <section class="panel themes-panel"><div class="panel-heading"><div><span class="panel-index">02</span><h3>What reviewers say</h3></div><button class="sort-btn" id="sortBtn">Most mentioned⌄</button></div><div class="sentiment-tabs" role="tablist"><button class="sentiment-tab active" data-group="positive">Loved <span>Positive</span></button><button class="sentiment-tab" data-group="average">Mixed <span>Average</span></button><button class="sentiment-tab" data-group="negative">Frustrated <span>Negative</span></button></div><div id="themeList" class="theme-list"></div><div class="method-note"><span>✳</span><div><strong>How we find patterns</strong><p>Reviews are grouped by rating, then similar comments are clustered with KNN to find recurring themes.</p></div></div></section>
+        </div>
+        <section class="next-stage"><div class="next-icon">◈</div><div class="next-copy"><span class="section-kicker">COMING NEXT</span><h3>Go from market signals to real product proof.</h3><p>Check competitor features, then watch a phone agent explore the app and verify what’s actually there.</p></div><div class="stage-tags"><span>02 · Feature checks</span><span>03 · Phone agent</span></div><button class="notify-btn" id="roadmapBtn">Explore the roadmap <span>↗</span></button></section>
+        <footer class="results-footer"><span>Research generated just now · illustrative sample data</span><span>Built for the curious <span class="footer-star">✳</span></span></footer>
+      </section>
+      <section class="initial-state" id="initialState"><span class="initial-star">✳</span><div><strong>A little curiosity goes a long way.</strong><p>Start with your idea. We’ll help you see the market from your future customers’ point of view.</p></div><span class="initial-arrow">↗</span></section>
+      <footer class="page-footer"><span>FIELDNOTES <span class="footer-dot">·</span> YOUR IDEA DESERVES A CLOSER LOOK</span><span>Stage 1 MVP <span class="footer-dot">·</span> September 2026</span></footer>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <dialog id="roadmapDialog"><button class="dialog-close" aria-label="Close">×</button><div class="dialog-mark">◈</div><div class="section-kicker">THE ROADMAP</div><h2>From insight to evidence.</h2><p>Feature checks and phone-agent evidence are planned next. This MVP demonstrates the first step with illustrative competitor and review data.</p><div class="roadmap-list"><div><b>02</b><span><strong>Feature checks</strong><small>Compare your feature list with app descriptions, docs, and reviews.</small></span><em>Planned</em></div><div><b>03</b><span><strong>Phone agent</strong><small>Explore competitor apps and capture evidence from real screens.</small></span><em>Planned</em></div></div><button class="dialog-done">Got it</button></dialog>
+  <script src="data/market-fixtures.js"></script>
+  <script src="services/market-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
