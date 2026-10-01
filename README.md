@@ -1,23 +1,23 @@
 # Mobile App Agent
 
-A static MVP for exploring an app idea, reviewing illustrative competitor matches, and browsing positive, mixed, and negative review themes.
+A small MVP for exploring an app idea. Stage 1 sends the description to a Vercel serverless function, which uses the OpenAI Responses API with web search to find 10 similar mobile apps. Review themes and saved history are still illustrative fixtures.
 
 ## Run locally
 
-Open `index.html` in a browser. No package installation or build step is required. A local static server also works:
+For the UI only, open `index.html` in a browser. To use the `/api/similar-apps` backend locally, run through Vercel's development server instead:
 
 ```sh
-python3 -m http.server 8000
+vercel dev
 ```
 
-Then open `http://localhost:8000` from this repository directory.
+Set `OPENAI_API_KEY` in a local `.env.local` file or use Vercel's environment configuration before starting the server. Never commit the key. `OPENAI_MODEL` is optional and defaults to `gpt-5.5`.
 
 ## Demo data
 
-All competitor, rating, review, user, and analysis records are illustrative. The app does not connect to an app store or collect live reviews. New demo analyses are held in memory and reset when the page reloads.
+Live similar-app candidates are generated from OpenAI web search and include source links. Search rankings are suggestions and should be checked against their linked sources. The app does not collect live store reviews yet. Seeded review themes, ratings, users, and saved analysis history are illustrative; new live searches are not persisted.
 
 The seed data is in `data/market-fixtures.js`. It uses linked mock records for users, ideas, analyses, analysis competitors, and review themes. The demo user selector and sidebar history show how records are scoped to a user.
 
 ## Data boundary
 
-`services/market-data.js` provides the interface the UI uses to list demo users, load a user's analysis history, retrieve a snapshot, and create an analysis. Replace this mock adapter with backend requests while preserving its returned snapshot shape to keep the UI largely unchanged.
+`api/similar-apps.js` validates the submitted description and keeps the OpenAI API key server-side. The description is sent to OpenAI with web search; the UI discloses this before submission. `services/market-data.js` calls this API for live competitors, while history and review records still use mock fixtures.

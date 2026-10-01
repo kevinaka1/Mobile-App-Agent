@@ -17,15 +17,19 @@ function renderCompetitors() {
   const competitors = allShown ? activeAnalysis.competitors : activeAnalysis.competitors.slice(0, 5);
   $('#competitorList').innerHTML = competitors.map((app, index) => `
     <div class="competitor-row">
-      <div class="app-icon" style="background:${iconBackgrounds[index % iconBackgrounds.length]}">${escapeHtml(app.icon)}</div>
-      <div class="app-info"><strong>${escapeHtml(app.name)}</strong><span>${escapeHtml(app.subtitle)}</span></div>
-      <div class="app-rating"><span class="star">★</span> ${app.rating.toFixed(1)} <span class="match-score">${app.similarityPercent}% match</span></div>
+      <div class="app-icon" style="background:${iconBackgrounds[index % iconBackgrounds.length]}">${escapeHtml(app.icon || '⌕')}</div>
+      <div class="app-info"><strong>${app.url ? `<a href="${escapeHtml(app.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(app.name)}</a>` : escapeHtml(app.name)}</strong><span>${escapeHtml(app.subtitle || app.summary || '')}</span></div>
+      <div class="app-rating">${app.platform ? `<span class="match-score">${escapeHtml(app.platform)}</span>` : ''}</div>
     </div>`).join('');
   $('#viewAll').innerHTML = allShown ? 'Show fewer competitors <span>↑</span>' : 'View all 10 competitors <span>→</span>';
 }
 
 function renderThemes() {
   if (!activeAnalysis) return;
+  if (!activeAnalysis.isDemo) {
+    $('#themeList').innerHTML = '<div class="empty-history">Live review collection is the next backend step. These review themes are not included in this search.</div>';
+    return;
+  }
   const themes = activeAnalysis.reviewThemes[currentGroup] || [];
   $('#themeList').innerHTML = themes.map((theme, index) => `
     <div class="theme-row">
@@ -97,6 +101,20 @@ async function showSnapshot(snapshot) {
   $('.summary-note strong').textContent = snapshot.summary.topOpportunity;
   $('#analysisStatus').textContent = snapshot.analysis.status.toUpperCase();
   $('#analysisStatus').className = `analysis-status ${snapshot.analysis.status}`;
+  $('.demo-pill').textContent = snapshot.isDemo ? 'ILLUSTRATIVE DATA' : 'WEB SEARCH';
+  $('.summary-note').innerHTML = snapshot.isDemo
+    ? `<span>✳</span> Most promising gap <strong>${escapeHtml(snapshot.summary.topOpportunity)}</strong>`
+    : `<span>✳</span> Next step <strong>Collect reviews for these apps</strong>`;
+  $('.results-footer > span:first-child').textContent = snapshot.isDemo
+    ? 'Research generated just now · illustrative sample data'
+    : 'Competitors found using live web search · review data not yet connected';
+  $('.results-sub').textContent = snapshot.isDemo
+    ? 'A first look at the apps closest to your idea and the patterns in their reviews.'
+    : 'Potential competitors found with live web search. App store reviews will be added in a later backend step.';
+  $('.sentiment-tabs').hidden = !snapshot.isDemo;
+  $('.method-note').innerHTML = snapshot.isDemo
+    ? '<span>✳</span><div><strong>How we find patterns</strong><p>Reviews are grouped by rating, then similar comments are clustered with KNN to find recurring themes.</p></div>'
+    : '<span>✳</span><div><strong>Review analysis is not connected yet</strong><p>This search only finds potential competitor apps. No reviews were scanned or summarized.</p></div>';
   $('#results').hidden = false;
   $('#initialState').hidden = true;
   document.querySelectorAll('.sentiment-tab').forEach(button => button.classList.toggle('active', button.dataset.group === currentGroup));
@@ -120,13 +138,27 @@ async function analyze() {
   const analyzeButton = $('#analyzeBtn');
   analyzeButton.disabled = true;
   analyzeButton.querySelector('span:first-child').textContent = 'Analyzing…';
+  $('#sourceList').hidden = true;
   try {
-    const snapshot = await window.MarketDataService.createAnalysis({ userId: currentUserId, description });
-    await renderHistory();
+    const result = await window.MarketDataService.findSimilarApps(description);
+    const snapshot = {
+      idea: { name: description.slice(0, 52), description },
+      analysis: { status: 'completed' },
+      competitors: result.apps.map(app => ({ ...app, subtitle: `${app.platform} · ${app.relevanceReason}`, icon: '⌕' })),
+      reviewThemes: { positive: [], average: [], negative: [] },
+      summary: { similarAppCount: result.apps.length, reviewCountLabel: 'Not scanned', sentimentGroupCount: '—', topOpportunity: 'Collect reviews for these apps' },
+      sources: result.sources,
+      isDemo: false
+    };
     await showSnapshot(snapshot);
+    if (result.sources?.length) {
+      const list = result.sources.filter(source => /^https:\/\//i.test(source.url)).slice(0, 5).map(source => `<a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.title)}</a>`).join(' · ');
+      $('#sourceList').innerHTML = `<span>WEB SOURCES</span> ${list}`;
+      $('#sourceList').hidden = false;
+    }
   } catch (error) {
     console.error('Market analysis failed:', error);
-    toast('We could not load the market snapshot. Please try again.');
+    toast(error.message || 'We could not load the market snapshot. Please try again.');
   } finally {
     analyzeButton.disabled = false;
     analyzeButton.querySelector('span:first-child').textContent = 'Analyze the market';
@@ -178,16 +210,16 @@ $('#sortBtn').addEventListener('click', () => toast('Themes are ranked by how of
 $('#exportBtn').addEventListener('click', () => {
   if (!activeAnalysis) return;
   const rows = [
-    'Fieldnotes — Market Snapshot',
-    'Illustrative sample data',
+    'Mobile App Agent — Market Snapshot',
+    activeAnalysis.isDemo ? 'Illustrative sample data' : 'Live web search results',
     '',
     `App idea: ${activeAnalysis.idea.description}`,
     '',
     'Similar apps',
-    ...activeAnalysis.competitors.map((app, index) => `${index + 1}. ${app.name} — ${app.subtitle} — ${app.rating.toFixed(1)}★ — ${app.similarityPercent}% match`),
+    ...activeAnalysis.competitors.map((app, index) => `${index + 1}. ${app.name} — ${app.subtitle || app.summary}${app.url ? ` — ${app.url}` : ''}`),
     '',
     'Common review themes',
-    ...Object.entries(activeAnalysis.reviewThemes).flatMap(([group, themes]) => [group.toUpperCase(), ...themes.map(theme => `• ${theme.name} (${theme.mentions}) — ${theme.example}`), ''])
+    ...(activeAnalysis.isDemo ? Object.entries(activeAnalysis.reviewThemes).flatMap(([group, themes]) => [group.toUpperCase(), ...themes.map(theme => `• ${theme.name} (${theme.mentions}) — ${theme.example}`), '']) : ['Review data has not been collected yet.'])
   ].join('\n');
   const blobUrl = URL.createObjectURL(new Blob([rows], { type: 'text/plain' }));
   const link = document.createElement('a');
@@ -197,6 +229,8 @@ $('#exportBtn').addEventListener('click', () => {
   URL.revokeObjectURL(blobUrl);
   toast('Your market snapshot is ready to download.');
 });
+
+$('#idea').addEventListener('input', () => { $('#sourceList').hidden = true; });
 
 const dialog = $('#roadmapDialog');
 $('#roadmapBtn').addEventListener('click', () => dialog.showModal());

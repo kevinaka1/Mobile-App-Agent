@@ -1,7 +1,8 @@
 /*
  * Mock persistence and query layer for the prototype.
  * The public methods and returned snapshot shape are the UI's data contract.
- * Replace this adapter with API requests when a backend is available.
+ * The similar-app search uses a Vercel API route; remaining history and review
+ * data are demo fixtures until their backend stages are implemented.
  */
 const mockDatabase = window.MarketFixtures;
 
@@ -72,6 +73,17 @@ function toSnapshot(analysis) {
 }
 
 window.MarketDataService = {
+  async findSimilarApps(description) {
+    const response = await fetch('/api/similar-apps', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ description })
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(result.error || 'Market search failed.');
+    return result;
+  },
+
   async listUsers() {
     return mockDatabase.users.map(user => ({ ...user }));
   },
