@@ -1,0 +1,738 @@
+{
+  "users": [
+    {
+      "name": "Alex Morgan",
+      "email": "alex@example.test",
+      "initials": "AM",
+      "mockId": "usr_alex_morgan"
+    },
+    {
+      "name": "Maya Chen",
+      "email": "maya@example.test",
+      "initials": "MC",
+      "mockId": "usr_maya_chen"
+    },
+    {
+      "name": "Jordan Rivera",
+      "email": "jordan@example.test",
+      "initials": "JR",
+      "mockId": "usr_jordan_rivera"
+    }
+  ],
+  "ideas": [
+    {
+      "name": "Fridge-first meal planner",
+      "description": "An app that helps people plan meals around what is already in their fridge, with recipes that adapt to dietary needs.",
+      "createdAt": "2026-09-28T16:40:00.000Z",
+      "mockId": "idea_alex_meal",
+      "mockUserId": "usr_alex_morgan"
+    },
+    {
+      "name": "Flexible home workouts",
+      "description": "A fitness app that builds short home workouts around the time and energy I have each day.",
+      "createdAt": "2026-09-25T18:15:00.000Z",
+      "mockId": "idea_alex_fitness",
+      "mockUserId": "usr_alex_morgan"
+    },
+    {
+      "name": "Shared household budget",
+      "description": "A simple budgeting app that helps couples split shared bills, track subscriptions, and save for a goal together.",
+      "createdAt": "2026-09-27T19:20:00.000Z",
+      "mockId": "idea_maya_budget",
+      "mockUserId": "usr_maya_chen"
+    },
+    {
+      "name": "Daily routine coach",
+      "description": "An app that helps me build a calmer daily routine with gentle reminders and progress tracking.",
+      "createdAt": "2026-09-26T15:05:00.000Z",
+      "mockId": "idea_jordan_general",
+      "mockUserId": "usr_jordan_rivera"
+    }
+  ],
+  "analyses": [
+    {
+      "similarAppCount": 10,
+      "reviewsScannedCount": 8400,
+      "sentimentGroupCount": 3,
+      "createdAt": "2026-09-28T16:40:00.000Z",
+      "mockId": "analysis_alex_meal",
+      "mockIdeaId": "idea_alex_meal"
+    },
+    {
+      "similarAppCount": 10,
+      "reviewsScannedCount": 6700,
+      "sentimentGroupCount": 3,
+      "createdAt": "2026-09-25T18:15:00.000Z",
+      "mockId": "analysis_alex_fitness",
+      "mockIdeaId": "idea_alex_fitness"
+    },
+    {
+      "similarAppCount": 10,
+      "reviewsScannedCount": 9200,
+      "sentimentGroupCount": 3,
+      "createdAt": "2026-09-27T19:20:00.000Z",
+      "mockId": "analysis_maya_budget",
+      "mockIdeaId": "idea_maya_budget"
+    },
+    {
+      "similarAppCount": 10,
+      "reviewsScannedCount": 5100,
+      "sentimentGroupCount": 3,
+      "createdAt": "2026-09-26T15:05:00.000Z",
+      "mockId": "analysis_jordan_general",
+      "mockIdeaId": "idea_jordan_general"
+    }
+  ],
+  "analysisCompetitors": [
+    {
+      "appName": "Mealime",
+      "appSummary": "Mealime Meal Plans",
+      "appUrl": "https://example.test/mock-apps/mealime",
+      "rating": 4.7,
+      "matchPercent": 92,
+      "mockId": "competitor_alex_meal_01",
+      "mockAnalysisId": "analysis_alex_meal"
+    },
+    {
+      "appName": "SuperCook",
+      "appSummary": "Recipe by Ingredient",
+      "appUrl": "https://example.test/mock-apps/supercook",
+      "rating": 4.6,
+      "matchPercent": 89,
+      "mockId": "competitor_alex_meal_02",
+      "mockAnalysisId": "analysis_alex_meal"
+    },
+    {
+      "appName": "Samsung Food",
+      "appSummary": "Recipes & Meal Planner",
+      "appUrl": "https://example.test/mock-apps/samsung-food",
+      "rating": 4.6,
+      "matchPercent": 86,
+      "mockId": "competitor_alex_meal_03",
+      "mockAnalysisId": "analysis_alex_meal"
+    },
+    {
+      "appName": "Sidekick",
+      "appSummary": "Sorted Food",
+      "appUrl": "https://example.test/mock-apps/sidekick",
+      "rating": 4.8,
+      "matchPercent": 82,
+      "mockId": "competitor_alex_meal_04",
+      "mockAnalysisId": "analysis_alex_meal"
+    },
+    {
+      "appName": "BigOven",
+      "appSummary": "Recipes & Meal Planner",
+      "appUrl": "https://example.test/mock-apps/bigoven",
+      "rating": 4.5,
+      "matchPercent": 79,
+      "mockId": "competitor_alex_meal_05",
+      "mockAnalysisId": "analysis_alex_meal"
+    },
+    {
+      "appName": "Paprika",
+      "appSummary": "Recipe Manager",
+      "appUrl": "https://example.test/mock-apps/paprika",
+      "rating": 4.8,
+      "matchPercent": 77,
+      "mockId": "competitor_alex_meal_06",
+      "mockAnalysisId": "analysis_alex_meal"
+    },
+    {
+      "appName": "Yummly",
+      "appSummary": "Recipes & Cooking Tools",
+      "appUrl": "https://example.test/mock-apps/yummly",
+      "rating": 4.6,
+      "matchPercent": 75,
+      "mockId": "competitor_alex_meal_07",
+      "mockAnalysisId": "analysis_alex_meal"
+    },
+    {
+      "appName": "Kitchen Stories",
+      "appSummary": "Recipes",
+      "appUrl": "https://example.test/mock-apps/kitchen-stories",
+      "rating": 4.7,
+      "matchPercent": 72,
+      "mockId": "competitor_alex_meal_08",
+      "mockAnalysisId": "analysis_alex_meal"
+    },
+    {
+      "appName": "AnyList",
+      "appSummary": "Grocery Shopping List",
+      "appUrl": "https://example.test/mock-apps/anylist",
+      "rating": 4.9,
+      "matchPercent": 69,
+      "mockId": "competitor_alex_meal_09",
+      "mockAnalysisId": "analysis_alex_meal"
+    },
+    {
+      "appName": "Samsung Health",
+      "appSummary": "Food Tracker",
+      "appUrl": "https://example.test/mock-apps/samsung-health",
+      "rating": 4.4,
+      "matchPercent": 65,
+      "mockId": "competitor_alex_meal_10",
+      "mockAnalysisId": "analysis_alex_meal"
+    },
+    {
+      "appName": "Strava",
+      "appSummary": "Run, Ride, Hike",
+      "appUrl": "https://example.test/mock-apps/strava",
+      "rating": 4.8,
+      "matchPercent": 94,
+      "mockId": "competitor_alex_fitness_01",
+      "mockAnalysisId": "analysis_alex_fitness"
+    },
+    {
+      "appName": "Fitbod",
+      "appSummary": "Workout Planner",
+      "appUrl": "https://example.test/mock-apps/fitbod",
+      "rating": 4.7,
+      "matchPercent": 88,
+      "mockId": "competitor_alex_fitness_02",
+      "mockAnalysisId": "analysis_alex_fitness"
+    },
+    {
+      "appName": "Nike Training Club",
+      "appSummary": "Fitness",
+      "appUrl": "https://example.test/mock-apps/nike-training-club",
+      "rating": 4.8,
+      "matchPercent": 84,
+      "mockId": "competitor_alex_fitness_03",
+      "mockAnalysisId": "analysis_alex_fitness"
+    },
+    {
+      "appName": "Peloton",
+      "appSummary": "Fitness & Workouts",
+      "appUrl": "https://example.test/mock-apps/peloton",
+      "rating": 4.7,
+      "matchPercent": 81,
+      "mockId": "competitor_alex_fitness_04",
+      "mockAnalysisId": "analysis_alex_fitness"
+    },
+    {
+      "appName": "Strong",
+      "appSummary": "Workout Tracker",
+      "appUrl": "https://example.test/mock-apps/strong",
+      "rating": 4.9,
+      "matchPercent": 78,
+      "mockId": "competitor_alex_fitness_05",
+      "mockAnalysisId": "analysis_alex_fitness"
+    },
+    {
+      "appName": "Freeletics",
+      "appSummary": "Fitness Coach",
+      "appUrl": "https://example.test/mock-apps/freeletics",
+      "rating": 4.6,
+      "matchPercent": 75,
+      "mockId": "competitor_alex_fitness_06",
+      "mockAnalysisId": "analysis_alex_fitness"
+    },
+    {
+      "appName": "Hevy",
+      "appSummary": "Workout Tracker",
+      "appUrl": "https://example.test/mock-apps/hevy",
+      "rating": 4.9,
+      "matchPercent": 73,
+      "mockId": "competitor_alex_fitness_07",
+      "mockAnalysisId": "analysis_alex_fitness"
+    },
+    {
+      "appName": "Apple Fitness+",
+      "appSummary": "Fitness",
+      "appUrl": "https://example.test/mock-apps/apple-fitness",
+      "rating": 4.7,
+      "matchPercent": 71,
+      "mockId": "competitor_alex_fitness_08",
+      "mockAnalysisId": "analysis_alex_fitness"
+    },
+    {
+      "appName": "Ladder",
+      "appSummary": "Strength Training",
+      "appUrl": "https://example.test/mock-apps/ladder",
+      "rating": 4.8,
+      "matchPercent": 68,
+      "mockId": "competitor_alex_fitness_09",
+      "mockAnalysisId": "analysis_alex_fitness"
+    },
+    {
+      "appName": "JEFIT",
+      "appSummary": "Workout Planner",
+      "appUrl": "https://example.test/mock-apps/jefit",
+      "rating": 4.6,
+      "matchPercent": 65,
+      "mockId": "competitor_alex_fitness_10",
+      "mockAnalysisId": "analysis_alex_fitness"
+    },
+    {
+      "appName": "Rocket Money",
+      "appSummary": "Bills & Budgets",
+      "appUrl": "https://example.test/mock-apps/rocket-money",
+      "rating": 4.8,
+      "matchPercent": 92,
+      "mockId": "competitor_maya_budget_01",
+      "mockAnalysisId": "analysis_maya_budget"
+    },
+    {
+      "appName": "YNAB",
+      "appSummary": "Budgeting & Finance",
+      "appUrl": "https://example.test/mock-apps/ynab",
+      "rating": 4.7,
+      "matchPercent": 88,
+      "mockId": "competitor_maya_budget_02",
+      "mockAnalysisId": "analysis_maya_budget"
+    },
+    {
+      "appName": "Monarch",
+      "appSummary": "Money Management",
+      "appUrl": "https://example.test/mock-apps/monarch",
+      "rating": 4.8,
+      "matchPercent": 84,
+      "mockId": "competitor_maya_budget_03",
+      "mockAnalysisId": "analysis_maya_budget"
+    },
+    {
+      "appName": "PocketGuard",
+      "appSummary": "Budget Planner",
+      "appUrl": "https://example.test/mock-apps/pocketguard",
+      "rating": 4.6,
+      "matchPercent": 81,
+      "mockId": "competitor_maya_budget_04",
+      "mockAnalysisId": "analysis_maya_budget"
+    },
+    {
+      "appName": "Copilot",
+      "appSummary": "Track & Budget Money",
+      "appUrl": "https://example.test/mock-apps/copilot",
+      "rating": 4.8,
+      "matchPercent": 79,
+      "mockId": "competitor_maya_budget_05",
+      "mockAnalysisId": "analysis_maya_budget"
+    },
+    {
+      "appName": "NerdWallet",
+      "appSummary": "Finance Tracker",
+      "appUrl": "https://example.test/mock-apps/nerdwallet",
+      "rating": 4.7,
+      "matchPercent": 76,
+      "mockId": "competitor_maya_budget_06",
+      "mockAnalysisId": "analysis_maya_budget"
+    },
+    {
+      "appName": "Empower",
+      "appSummary": "Personal Dashboard",
+      "appUrl": "https://example.test/mock-apps/empower",
+      "rating": 4.6,
+      "matchPercent": 73,
+      "mockId": "competitor_maya_budget_07",
+      "mockAnalysisId": "analysis_maya_budget"
+    },
+    {
+      "appName": "Goodbudget",
+      "appSummary": "Budget Planner",
+      "appUrl": "https://example.test/mock-apps/goodbudget",
+      "rating": 4.5,
+      "matchPercent": 70,
+      "mockId": "competitor_maya_budget_08",
+      "mockAnalysisId": "analysis_maya_budget"
+    },
+    {
+      "appName": "EveryDollar",
+      "appSummary": "Budgeting App",
+      "appUrl": "https://example.test/mock-apps/everydollar",
+      "rating": 4.7,
+      "matchPercent": 68,
+      "mockId": "competitor_maya_budget_09",
+      "mockAnalysisId": "analysis_maya_budget"
+    },
+    {
+      "appName": "Simplifi",
+      "appSummary": "Personal Finance",
+      "appUrl": "https://example.test/mock-apps/simplifi",
+      "rating": 4.5,
+      "matchPercent": 65,
+      "mockId": "competitor_maya_budget_10",
+      "mockAnalysisId": "analysis_maya_budget"
+    },
+    {
+      "appName": "Notion",
+      "appSummary": "Notes, Tasks & AI",
+      "appUrl": "https://example.test/mock-apps/notion",
+      "rating": 4.8,
+      "matchPercent": 91,
+      "mockId": "competitor_jordan_general_01",
+      "mockAnalysisId": "analysis_jordan_general"
+    },
+    {
+      "appName": "Productivity",
+      "appSummary": "Focus & Planning",
+      "appUrl": "https://example.test/mock-apps/productivity",
+      "rating": 4.7,
+      "matchPercent": 88,
+      "mockId": "competitor_jordan_general_02",
+      "mockAnalysisId": "analysis_jordan_general"
+    },
+    {
+      "appName": "Headspace",
+      "appSummary": "Meditation & Sleep",
+      "appUrl": "https://example.test/mock-apps/headspace",
+      "rating": 4.9,
+      "matchPercent": 84,
+      "mockId": "competitor_jordan_general_03",
+      "mockAnalysisId": "analysis_jordan_general"
+    },
+    {
+      "appName": "Duolingo",
+      "appSummary": "Language Lessons",
+      "appUrl": "https://example.test/mock-apps/duolingo",
+      "rating": 4.8,
+      "matchPercent": 82,
+      "mockId": "competitor_jordan_general_04",
+      "mockAnalysisId": "analysis_jordan_general"
+    },
+    {
+      "appName": "Todoist",
+      "appSummary": "To-do List & Planner",
+      "appUrl": "https://example.test/mock-apps/todoist",
+      "rating": 4.8,
+      "matchPercent": 79,
+      "mockId": "competitor_jordan_general_05",
+      "mockAnalysisId": "analysis_jordan_general"
+    },
+    {
+      "appName": "Fabulous",
+      "appSummary": "Daily Routine Planner",
+      "appUrl": "https://example.test/mock-apps/fabulous",
+      "rating": 4.6,
+      "matchPercent": 75,
+      "mockId": "competitor_jordan_general_06",
+      "mockAnalysisId": "analysis_jordan_general"
+    },
+    {
+      "appName": "Finch",
+      "appSummary": "Self Care Pet",
+      "appUrl": "https://example.test/mock-apps/finch",
+      "rating": 4.9,
+      "matchPercent": 72,
+      "mockId": "competitor_jordan_general_07",
+      "mockAnalysisId": "analysis_jordan_general"
+    },
+    {
+      "appName": "Day One",
+      "appSummary": "Journal & Diary",
+      "appUrl": "https://example.test/mock-apps/day-one",
+      "rating": 4.8,
+      "matchPercent": 69,
+      "mockId": "competitor_jordan_general_08",
+      "mockAnalysisId": "analysis_jordan_general"
+    },
+    {
+      "appName": "Structured",
+      "appSummary": "Daily Planner",
+      "appUrl": "https://example.test/mock-apps/structured",
+      "rating": 4.7,
+      "matchPercent": 66,
+      "mockId": "competitor_jordan_general_09",
+      "mockAnalysisId": "analysis_jordan_general"
+    },
+    {
+      "appName": "Balance",
+      "appSummary": "Meditation & Sleep",
+      "appUrl": "https://example.test/mock-apps/balance",
+      "rating": 4.8,
+      "matchPercent": 63,
+      "mockId": "competitor_jordan_general_10",
+      "mockAnalysisId": "analysis_jordan_general"
+    }
+  ],
+  "reviewThemes": [
+    {
+      "sentiment": "positive",
+      "summary": "Easy to follow recipes",
+      "exampleReview": "“Clear steps and recipes I actually make.”",
+      "mentions": 1200,
+      "mockId": "theme_alex_meal_positive_1",
+      "mockAnalysisId": "analysis_alex_meal"
+    },
+    {
+      "sentiment": "positive",
+      "summary": "Good meal planning",
+      "exampleReview": "“Planning the week takes just a few minutes.”",
+      "mentions": 980,
+      "mockId": "theme_alex_meal_positive_2",
+      "mockAnalysisId": "analysis_alex_meal"
+    },
+    {
+      "sentiment": "positive",
+      "summary": "Helpful dietary filters",
+      "exampleReview": "“Finally easy to find gluten-free dinners.”",
+      "mentions": 710,
+      "mockId": "theme_alex_meal_positive_3",
+      "mockAnalysisId": "analysis_alex_meal"
+    },
+    {
+      "sentiment": "average",
+      "summary": "Ingredient matching feels limited",
+      "exampleReview": "“It misses ingredients I definitely have.”",
+      "mentions": 890,
+      "mockId": "theme_alex_meal_average_1",
+      "mockAnalysisId": "analysis_alex_meal"
+    },
+    {
+      "sentiment": "average",
+      "summary": "Recipe variety varies",
+      "exampleReview": "“Good ideas, but I see the same ones often.”",
+      "mentions": 650,
+      "mockId": "theme_alex_meal_average_2",
+      "mockAnalysisId": "analysis_alex_meal"
+    },
+    {
+      "sentiment": "average",
+      "summary": "Grocery list needs editing",
+      "exampleReview": "“Useful start, but I still tweak the list.”",
+      "mentions": 460,
+      "mockId": "theme_alex_meal_average_3",
+      "mockAnalysisId": "analysis_alex_meal"
+    },
+    {
+      "sentiment": "negative",
+      "summary": "Ingredient recognition misses items",
+      "exampleReview": "“I have to add half my pantry by hand.”",
+      "mentions": 1400,
+      "mockId": "theme_alex_meal_negative_1",
+      "mockAnalysisId": "analysis_alex_meal"
+    },
+    {
+      "sentiment": "negative",
+      "summary": "Too many premium prompts",
+      "exampleReview": "“The paywall appears before I can plan.”",
+      "mentions": 980,
+      "mockId": "theme_alex_meal_negative_2",
+      "mockAnalysisId": "analysis_alex_meal"
+    },
+    {
+      "sentiment": "negative",
+      "summary": "Diet filters are inconsistent",
+      "exampleReview": "“Some recipes ignore my preferences.”",
+      "mentions": 640,
+      "mockId": "theme_alex_meal_negative_3",
+      "mockAnalysisId": "analysis_alex_meal"
+    },
+    {
+      "sentiment": "positive",
+      "summary": "Guided workouts are motivating",
+      "exampleReview": "“I actually look forward to training now.”",
+      "mentions": 1400,
+      "mockId": "theme_alex_fitness_positive_1",
+      "mockAnalysisId": "analysis_alex_fitness"
+    },
+    {
+      "sentiment": "positive",
+      "summary": "Progress tracking works well",
+      "exampleReview": "“Seeing progress keeps me consistent.”",
+      "mentions": 1100,
+      "mockId": "theme_alex_fitness_positive_2",
+      "mockAnalysisId": "analysis_alex_fitness"
+    },
+    {
+      "sentiment": "positive",
+      "summary": "Good exercise variety",
+      "exampleReview": "“There’s always a new routine to try.”",
+      "mentions": 730,
+      "mockId": "theme_alex_fitness_positive_3",
+      "mockAnalysisId": "analysis_alex_fitness"
+    },
+    {
+      "sentiment": "average",
+      "summary": "Plans are hard to personalize",
+      "exampleReview": "“The program doesn’t adapt when I miss a day.”",
+      "mentions": 960,
+      "mockId": "theme_alex_fitness_average_1",
+      "mockAnalysisId": "analysis_alex_fitness"
+    },
+    {
+      "sentiment": "average",
+      "summary": "Equipment options are limited",
+      "exampleReview": "“My home setup isn’t in the exercise list.”",
+      "mentions": 700,
+      "mockId": "theme_alex_fitness_average_2",
+      "mockAnalysisId": "analysis_alex_fitness"
+    },
+    {
+      "sentiment": "average",
+      "summary": "Notifications need control",
+      "exampleReview": "“Reminders come at the wrong time.”",
+      "mentions": 530,
+      "mockId": "theme_alex_fitness_average_3",
+      "mockAnalysisId": "analysis_alex_fitness"
+    },
+    {
+      "sentiment": "negative",
+      "summary": "Workout recommendations repeat",
+      "exampleReview": "“It keeps giving me the same sessions.”",
+      "mentions": 1300,
+      "mockId": "theme_alex_fitness_negative_1",
+      "mockAnalysisId": "analysis_alex_fitness"
+    },
+    {
+      "sentiment": "negative",
+      "summary": "Progress tracking misses context",
+      "exampleReview": "“It doesn’t account for how hard the workout felt.”",
+      "mentions": 970,
+      "mockId": "theme_alex_fitness_negative_2",
+      "mockAnalysisId": "analysis_alex_fitness"
+    },
+    {
+      "sentiment": "negative",
+      "summary": "Too much content is locked",
+      "exampleReview": "“Useful plans require another subscription.”",
+      "mentions": 720,
+      "mockId": "theme_alex_fitness_negative_3",
+      "mockAnalysisId": "analysis_alex_fitness"
+    },
+    {
+      "sentiment": "positive",
+      "summary": "Clear spending overview",
+      "exampleReview": "“I can finally see where my money goes.”",
+      "mentions": 1500,
+      "mockId": "theme_maya_budget_positive_1",
+      "mockAnalysisId": "analysis_maya_budget"
+    },
+    {
+      "sentiment": "positive",
+      "summary": "Helpful savings goals",
+      "exampleReview": "“The goals keep me accountable.”",
+      "mentions": 940,
+      "mockId": "theme_maya_budget_positive_2",
+      "mockAnalysisId": "analysis_maya_budget"
+    },
+    {
+      "sentiment": "positive",
+      "summary": "Fast account syncing",
+      "exampleReview": "“Everything is in one place.”",
+      "mentions": 700,
+      "mockId": "theme_maya_budget_positive_3",
+      "mockAnalysisId": "analysis_maya_budget"
+    },
+    {
+      "sentiment": "average",
+      "summary": "Setup takes too long",
+      "exampleReview": "“Connecting all my accounts was a project.”",
+      "mentions": 880,
+      "mockId": "theme_maya_budget_average_1",
+      "mockAnalysisId": "analysis_maya_budget"
+    },
+    {
+      "sentiment": "average",
+      "summary": "Subscription detection misses",
+      "exampleReview": "“It didn’t catch a couple of recurring charges.”",
+      "mentions": 680,
+      "mockId": "theme_maya_budget_average_2",
+      "mockAnalysisId": "analysis_maya_budget"
+    },
+    {
+      "sentiment": "average",
+      "summary": "Budget categories need tuning",
+      "exampleReview": "“I had to fix the auto categories.”",
+      "mentions": 510,
+      "mockId": "theme_maya_budget_average_3",
+      "mockAnalysisId": "analysis_maya_budget"
+    },
+    {
+      "sentiment": "negative",
+      "summary": "Account sync breaks",
+      "exampleReview": "“My bank disconnects every few days.”",
+      "mentions": 1300,
+      "mockId": "theme_maya_budget_negative_1",
+      "mockAnalysisId": "analysis_maya_budget"
+    },
+    {
+      "sentiment": "negative",
+      "summary": "Too many features behind paywall",
+      "exampleReview": "“Basic insights should not need premium.”",
+      "mentions": 920,
+      "mockId": "theme_maya_budget_negative_2",
+      "mockAnalysisId": "analysis_maya_budget"
+    },
+    {
+      "sentiment": "negative",
+      "summary": "Transactions categorize poorly",
+      "exampleReview": "“I spend too much time correcting categories.”",
+      "mentions": 690,
+      "mockId": "theme_maya_budget_negative_3",
+      "mockAnalysisId": "analysis_maya_budget"
+    },
+    {
+      "sentiment": "positive",
+      "summary": "Simple to get started",
+      "exampleReview": "“I was up and running in a couple of minutes.”",
+      "mentions": 1300,
+      "mockId": "theme_jordan_general_positive_1",
+      "mockAnalysisId": "analysis_jordan_general"
+    },
+    {
+      "sentiment": "positive",
+      "summary": "Helpful reminders",
+      "exampleReview": "“The nudges make it easier to stick with it.”",
+      "mentions": 980,
+      "mockId": "theme_jordan_general_positive_2",
+      "mockAnalysisId": "analysis_jordan_general"
+    },
+    {
+      "sentiment": "positive",
+      "summary": "Clean and pleasant design",
+      "exampleReview": "“It feels calm and easy to use.”",
+      "mentions": 720,
+      "mockId": "theme_jordan_general_positive_3",
+      "mockAnalysisId": "analysis_jordan_general"
+    },
+    {
+      "sentiment": "average",
+      "summary": "Customization takes time",
+      "exampleReview": "“I needed a while to make it fit my routine.”",
+      "mentions": 900,
+      "mockId": "theme_jordan_general_average_1",
+      "mockAnalysisId": "analysis_jordan_general"
+    },
+    {
+      "sentiment": "average",
+      "summary": "Some features are hard to find",
+      "exampleReview": "“I didn’t know this existed until recently.”",
+      "mentions": 680,
+      "mockId": "theme_jordan_general_average_2",
+      "mockAnalysisId": "analysis_jordan_general"
+    },
+    {
+      "sentiment": "average",
+      "summary": "Sync can be inconsistent",
+      "exampleReview": "“My changes don’t always show up everywhere.”",
+      "mentions": 490,
+      "mockId": "theme_jordan_general_average_3",
+      "mockAnalysisId": "analysis_jordan_general"
+    },
+    {
+      "sentiment": "negative",
+      "summary": "Key features behind a paywall",
+      "exampleReview": "“I hit the upgrade screen before seeing value.”",
+      "mentions": 1400,
+      "mockId": "theme_jordan_general_negative_1",
+      "mockAnalysisId": "analysis_jordan_general"
+    },
+    {
+      "sentiment": "negative",
+      "summary": "Too many notifications",
+      "exampleReview": "“The reminders became more distracting than helpful.”",
+      "mentions": 950,
+      "mockId": "theme_jordan_general_negative_2",
+      "mockAnalysisId": "analysis_jordan_general"
+    },
+    {
+      "sentiment": "negative",
+      "summary": "Sync issues across devices",
+      "exampleReview": "“I have to refresh to see the latest changes.”",
+      "mentions": 690,
+      "mockId": "theme_jordan_general_negative_3",
+      "mockAnalysisId": "analysis_jordan_general"
+    }
+  ]
+}
